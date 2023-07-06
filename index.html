@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book</title>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="header">
+            <h2>Welcome to your personal library</h2>
+            <button class="new-book">+ NEW BOOK</button>
+        </div>
+    
+
+        <div class="library">
+            <div class="book">
+                <div class="text-content">
+                    <h3 class="title">The Lor the Hobbit</h3>
+                    <h4 class="author">Making this </h4>
+                    <em><p class="pages">1111111 pages</p></em>
+                </div>
+                <div class="buttons">
+                    <div class="read">READ</div>
+                    <div class="unread">UNREAD</div>
+                    <div class="remove">REMOVE</div>
+                </div>
+            </div>
+           
+        </div>
+
+        <form class="modal">
+            <div class="escape">
+                <p>x</p>
+            </div>
+            <h2>Please fill out the following</h2>
+            <div class="title-input wrap">
+                <input 
+                type="text"  
+                name="title"
+                title="Book Title"
+                class="input-field"
+                id="book-title"
+                required/>
+                <label 
+                class="label-input"
+                for="book-title">Book Title: </label>
+
+            </div>
+
+            <div class="author-input wrap">        
+                <input 
+                type="text" 
+                name="author"
+                id="book-author"
+                class="input-field"
+                required/>
+                <label 
+                class="label-input"
+                for="book-author">Book Author: </label>
+
+            </div>
+
+            <div class="pages-input wrap">        
+                <input 
+                type="number" 
+                class="input-field"
+                name="pages"
+                id="book-pages"
+                />
+                <label 
+                class="label-input"
+                for="book-pages">Number of Pages: </label>
+
+            </div>
+
+            <div class="radio-read">
+
+            <p>Select if you have read or have not read the book</p>
+            <em><label for="read">Read </label></em>
+            <input type="radio" id = "read" name="read-radio" value="read"/>
+            <em><label for="unread">Unread </label></em>
+            <input type="radio" id = "unread" name="read-radio" value="unread"/>
+                
+            </div>
+            <div class="submit">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+
+        <footer>
+            <p>Something KM is proud about</p>
+            <p>
+                Photo by <a href="https://www.pexels.com/photo/books-file-on-book-shelves-2128249/">Gül Işık: </a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: url(./images/bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.main-container{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;  
+    background-color: rgba(22, 22, 22, 0.5);
+    color: white;
+}
+
+
+.header{
+    margin-top: 2em;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header h2{
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+}
+
+.header button{
+    border: none;
+    background: none;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    font-weight: 100;
+    font-size: 1.5em;
+    color: white;
+    cursor: pointer;
+}
+.header button:hover{
+    border: none;
+    color: rgb(68, 150, 58);    
+}
+
+.unread{
+    display: none;
+}
+
+.library{
+    max-width: 1100px;
+    width: 100%;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(220px, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 1em;
+}
+
+.book{
+    display: flex;
+    flex-direction: column;
+    border-radius: 1em;
+    padding: 1em;
+    text-align: center;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    height: minmax(220px, 1fr);
+    background-color: rgba(255, 255, 255, 0.26);
+}
+.buttons{
+    margin-top: auto;
+}
+
+.text-content{
+    background-color: rgba(48, 48, 48, 0.9);
+    padding: 0.5em;
+    border-radius: 0.5em;
+    margin-bottom: 0.5em;
+    height: 100%;   
+}
+
+.book h4, .pages {
+    font-weight: 100;
+}
+
+.pages{
+    margin-bottom: 1em;
+}
+
+.read{
+    display: none;
+    background-color: rgb(231, 204, 49);
+    padding: 0.5em;
+    border-radius: 0.5em;
+    margin-bottom: 0.5em;
+    cursor: pointer;
+}
+.read:hover{
+    background-color: rgb(163, 137, 23);
+}
+
+.unread{
+    display: none;
+    background-color: rgb(255, 131, 74);
+    padding: 0.5em;
+    border-radius: 0.5em;
+    margin-bottom: 0.5em;
+    cursor: pointer;
+}
+
+
+.unread:hover{
+    background-color: rgb(192, 99, 56);
+}
+.unread.active{
+    display: block;
+}
+.read.active{
+    display: block;
+}
+
+.remove{
+    background-color: rgb(139, 45, 42);
+    padding: 0.5em;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.remove:hover{
+    background-color: rgb(94, 30, 28);
+}
+
+footer {
+    margin-top: auto;
+    font-weight: 100;
+    font-size: 12px;
+    text-align: center;
+}
+
+footer a{
+    text-decoration: none;
+    color: rgb(218, 218, 218);
+}
+
+/* ----------------------------------------------------- */
+form{
+    display: none;
+}
+
+.modal{
+    background-color: rgba(255, 255, 255, 0.26);
+    padding: 2em;
+    border-radius: 1em;
+    z-index: 1;
+    position:absolute;
+    top:50%;
+    left: 50%;
+    transform: translateX(-50%)translateY(-50%);
+}
+
+.escape{
+    position: absolute;
+    top: 15px;
+    right: 18px;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.escape:hover{
+    color: red;
+}
+.wrap{
+    position: relative;
+    height: 35px;
+    margin-bottom: 1rem;
+}
+
+.input-field{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #bbb;
+    padding: 0;
+    font-size: 0.95rem;
+    color: white;
+    transition: 0.4s;
+}
+.label-input{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.95rem;
+    pointer-events: none;
+    transition: 0.4s;
+    color: #bbb;
+}
+
+.input-field.active{
+    border-bottom: 1px solid white;
+}
+
+.input-field.active + .label-input{
+    font-size: 0.75rem;
+    color: white;
+    top: -2px;
+}
+
+form h2{
+    margin-bottom: 1rem;
+}
+
+.radio-read{
+    text-align: center;
+}
+
+.radio-read p{
+    margin-top: 1.5em;
+}
+.radio-read label{
+    font-weight: 100;
+}
+
+.submit input{
+    padding: 0.5em;
+    margin-top: 1.5em;
+    width: 100%;
+    border-radius: 0.5em;
+    border: none;
+    cursor: pointer;
+}
+
+.submit input:hover{
+    background-color: rgb(48, 48, 48);
+    color: white;
+}
+
+/* format the form */

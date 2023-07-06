@@ -77,7 +77,7 @@ form.addEventListener("submit", (e)=>{
     //Need to add Book to the LIBRARY  
     addBookToLibrary(myTempBook);
 
-        //create eventlistener for all read button unread button remove button. 
+//create eventlistener for all read button unread button remove button. 
 const readOrUnreadBtn = document.querySelectorAll(".read, .unread");
 for(let i = 0; i < readOrUnreadBtn.length; i++){
     readOrUnreadBtn[i].addEventListener("click", ()=>{
@@ -180,7 +180,6 @@ function createTempBook(){
 
  //Add the card to the library (container)
  library.appendChild(bookCard);
-
 
 }
 

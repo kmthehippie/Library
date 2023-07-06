@@ -16,3 +16,9 @@ myLibrary kept resetting everytime I refreshed because myLibrary = []; So it wou
 I added a JSON.parse(localStorage.getItem("myLibrary)) This was the most important thing I learnt today. That it was NOT localStorage.getItem("myLibrary", JSON.parse(myLibrary)).
 
 I am now having trouble trying to use the retrieved data from the localStorage. I need to use re-use the card-making part of the form listener. I need to figure this out.
+<---------------------->
+
+I fixed the local storage and the buttons eventually.
+And also updated the footer's css.
+
+ALL THINGS CAN BE CONQUERED IF YOU BREAK IT DOWN INTO SMALL ENOUGH A PIECE.

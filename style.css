@@ -16,6 +16,7 @@ body{
     align-items: center;
     height: 100vh;  
     background-color: rgba(22, 22, 22, 0.5);
+    height: 100%;
     color: white;
 }
 
@@ -137,7 +138,10 @@ body{
 }
 
 footer {
-    margin-top: auto;
+    position:absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
     font-weight: 100;
     font-size: 12px;
     text-align: center;

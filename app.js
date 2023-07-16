@@ -123,34 +123,55 @@ const removeBtn = document.querySelectorAll(".remove");
    
 })
 
+
+
+//!! Change function to class 
+class Book{
+    constructor(title, author, pages, read){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+    // this.info = function(){
+    //     console.log(`${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`);
+    // }
+};
+
+
+
 let myTempBook;
 function createTempBook(){
  //create a Book Object using currentTitle, currentAuthor, currentPages, currentRead
  myTempBook = new Book(currentTitle, currentAuthor, currentPages, currentRead);
 
- //move this information into the library to be saved as an array piece
 
  //create new div with the class book, new div textcontent, new h3 class title, new h4 class author, new p with class pages (need to add em tag here too), then need to add the buttons div and the classes read unread remove inside it. LOL omg. how to do this??
 
  const bookCard = document.createElement("div");
  bookCard.classList = "book";
+
  //construct the contents of the book-card and add them to respective elements
  const textContentContainer = document.createElement("div");
  textContentContainer.classList = "text-content";
- //construct the content of the text-content elements
- const titleHead = document.createElement("h3");
- titleHead.classList = "title";
- titleHead.textContent = myTempBook.title;
- const authorHead = document.createElement("h4");
- authorHead.classList = "author";
- authorHead.textContent = myTempBook.author;
- const pagesPara = document.createElement("p");
- pagesPara.classList = "pages";
- pagesPara.textContent = myTempBook.pages + " pages";
- //add them to the text-content container
- textContentContainer.appendChild(titleHead);
- textContentContainer.appendChild(authorHead);
- textContentContainer.appendChild(pagesPara);
+
+ //construct the content of the text-content elements 
+ //!! Created a factory function to create elements in the card.
+
+ function MakeEl(elName, elType, elClass){
+    elName = document.createElement(elType);
+    elName.classList = elClass;
+    elName.textContent = myTempBook[elClass];
+    textContentContainer.appendChild(elName);
+    return{
+        elName 
+    }
+}
+
+const titleHead = new MakeEl("titleHead", "h3", "title");
+const authorHead = new MakeEl ("authorHead", "h4", "author");
+const pagesPara = new MakeEl("pagesPara", "p", "pages");
+
 
  //add the textcontent to the book card.
  bookCard.appendChild(textContentContainer);
@@ -158,6 +179,7 @@ function createTempBook(){
  //create div for buttons
  const buttonsDiv = document.createElement("div");
  buttonsDiv.classList = "buttons";
+ 
  //choose read or unread to be displayed. created a active class to display or don't display
  const readOrUnread = document.createElement("div");
  if (currentRead === "read"){
@@ -188,15 +210,6 @@ function createTempBook(){
 let myLibrary;
 myLibrary = checkStorage();
 
-function Book (title, author, pages, read){
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    // this.info = function(){
-    //     console.log(`${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`);
-    // }
-};
 
 
 
